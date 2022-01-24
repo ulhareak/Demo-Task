@@ -85,11 +85,6 @@ def logout_view(request):
     return redirect('/')
 
 
-def admin_logout(request):
-    logout(request)
-    return redirect("/")
-
-
 def forgetpassword_view(request):
 
     if request.method == 'POST':
