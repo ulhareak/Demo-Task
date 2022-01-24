@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'LoginApp/base.html' %}
+{% block title %}login.html{% endblock %}
+{% block body %}
+<div>
+    <h2>Login Page </h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="login">
+    </form>
+    
+</div>
+<a href="{% url 'LoginApp:home' %}">Home</a>
+<p><a href="{% url 'LoginApp:forgetpassword' %}">forget password</a></p>
+{% endblock %}

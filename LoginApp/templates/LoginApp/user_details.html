@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% extends 'LoginApp/base.html' %}
+{% block title %} user_details {% endblock %}
+{% block body %}
+
+<a href="/profile/{{User.id}}">profile</a>
+<a href="{% url 'LoginApp:logout-user' %}" style="text-align: end;">Logout</a>
+<h2>{{User.role}} : Welcome {{User.first_name}}</h2>
+<h2>Employee List  </h2>
+{% if User.is_superuser %}
+<a href="">add</a>
+<a href=""></a>
+{%endif %}
+<div style="border: 2px;background-color: aliceblue;">
+    
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>email</th>
+                <th>mobile</th>
+                <th>role</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in Users %}
+            <tr>
+                <Td>{{user.first_name}}</Td>
+                <Td>{{user.last_name}}</Td>
+                <Td>{{user.email}}</Td>
+                <Td>{{user.mobile}}</Td>
+                <td>{{user.role}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+
+
+{% endblock %}

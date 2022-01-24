@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "LoginApp/base.html" %}
+{% block title %} User Profile {% endblock %}
+{% block body %}
+<a href="/site/{{request_user.id}}">Back</a>
+<h2>{{current_user.first_name }}</h2>
+<div>
+    
+    <form method="post" >
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="ok">
+    </form>
+</div>
+{% endblock %}

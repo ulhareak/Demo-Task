@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "LoginApp/base.html" %}
+{% block title %}addUser{% endblock %}
+{% block body %}
+<div>
+    <a href="/site/{{User.id}}">Back</a>
+    <h2> Create User </h2>
+    <form method="post">
+        {% csrf_token %}
+        {{user_form.as_p}}
+        {{p_form.as_p}}
+        <button type="submit">save</button>
+    </form>
+</div>
+{% endblock %}
