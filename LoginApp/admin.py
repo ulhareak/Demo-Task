@@ -26,29 +26,3 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(get_user_model(), CustomUserAdmin)
-
-# Register your models here.
-"""
-site_title = _('My site admin')
-    site_header = _('Administration')
-    index_title = _('CustomLogin')
-    #registering Custom login form for the Login interface
-    #this login form uses CustomBackend
-    login_form = CustomLoginForm
-class CustomUserAdmin(UserAdmin):
-    model = UserModel
-    add_form = RegistrationForm
-    ordering = ('username',)
-    fieldsets = (
-        (None, {'fields': ('username', 'password')}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
-        (_('Permissions'), {
-            'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
-        }),
-        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
-    )
-
-
-admin.site.register(UserModel, CustomUserAdmin)
-"""
-#admin.site.register(UserModel)

@@ -6,8 +6,7 @@ class UserManager(BaseUserManager):
     use_in_migrations = True
 
     def create_user(self, email, mobile, password, **extra_fields):
-        # if not username:
-        #raise ValueError("username is required!!!")
+        
         if not email:
             raise ValueError("email is required!!!")
         if not mobile:
@@ -17,6 +16,7 @@ class UserManager(BaseUserManager):
         #username = self.model.normalize_username(username)
         user = self.model(email=email,
                           mobile=mobile, **extra_fields)
+                  
         user.set_password(password)
         user.save(using=self._db)
         return user
